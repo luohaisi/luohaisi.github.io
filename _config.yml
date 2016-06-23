@@ -22,4 +22,4 @@ markdown: kramdown
 
 gems: [jekyll-paginate] 
 
-paginate: 2
+paginate: 10
