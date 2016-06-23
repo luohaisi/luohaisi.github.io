@@ -1,2 +1,2 @@
-# *luohaisi*.github.io
-now my blog is here!
+# luohaisi.github.io
+now my *blog* is here!
