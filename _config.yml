@@ -1,23 +1,89 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: Welcome to my world
-email: luohaisi@live.cn
-description: > # this means to ignore newlines until "baseurl:"
-  Hi, my name is luohaisi. This is my website.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+title: Luo Blog
+SEOTitle: luohaisi.cn | Luo Blog
+header-img: statics/img/home-bg-o.jpg
+email: luohaisi@qq.com
+description: "关于后端与前段、酒精与音乐 | 我，Web & Mobile Lover，Back-End Engineer | 这里是 @Luo 的个人博客，欢迎来访。"
+keyword: "luohaisi, Luo Blog, Luo的博客, PHP, JS, DATABASE, SERVER"
+url: "http://luohaisi.cn"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+
+
+# SNS settings
+RSS: false
+# weibo_username:     luohaisi
+#zhihu_username:     luohaisi
+github_username:    luohaisi
+#twitter_username:  luohaisi
+#facebook_username:  luohaisi
+# linkedin_username:  firstname-lastname-idxxxx
+
+
 
 # Build settings
-markdown: kramdown
-
-gems: [jekyll-paginate] 
-
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
 paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Disqus settings
+#disqus_username: _your_disqus_short_name_
+
+# Duoshuo settings
+#duoshuo_username: huxblog
+# Share component is depend on Comment so we can NOT use share only.
+#duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+
+
+# Analytics settings
+# Baidu Analytics
+#ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
+# Google Analytics
+#ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+#ga_domain: luohaisi.cn
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "保持对世界的好奇心。"
+sidebar-avatar: /statics/img/post-sample-image.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Friends
+# friends: [
+#     {
+#         title: "Hux",
+#         href: "http://huangxuan.me/"
+#     }
+# ]
