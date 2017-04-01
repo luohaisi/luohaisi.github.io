@@ -11,6 +11,17 @@ tags:
 
 > 阿里和腾讯的免费申请页面
 
-### 阿里云 https://common-buy.aliyun.com/?commodityCode=cas#/buy
+### 阿里云 
 
-### 腾讯云 https://www.qcloud.com/product/ssl
+发证机构： Symantec
+
+申请地址：
+https://common-buy.aliyun.com/?commodityCode=cas#/buy
+
+### 腾讯云 
+
+发证机构： trust Asia
+
+申请地址：
+https://www.qcloud.com/product/ssl
+![](/statics/img/trustAsia.jpg)
