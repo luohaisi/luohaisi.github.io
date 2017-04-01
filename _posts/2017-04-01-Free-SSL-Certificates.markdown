@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Linux 长尾命令集"
+title:  "阿里和腾讯的SSL证书免费申请页面"
 date:   2017-04-01 16:30:18 +0800
 author:     "Luo"
 header-mask: 0.3
