@@ -6,7 +6,7 @@ author:     "Luo"
 header-mask: 0.3
 catalog:    true
 tags:
-    - react-native RN 
+    - react-native RN
 ---
 
 > RN版本0.49。
@@ -30,7 +30,7 @@ tags:
 
 建议使用科学上网从官网直接下载最新版 [Android Studio](https://developer.android.com/studio/index.html)
 根据提示进行安装,这样可以一次性的把所需安装的JDK 和模拟器一次性的下载完成.
-但是,还不完整! 
+但是,还不完整!
 例如 `adb devices` 命令用于检查你的android设备或模拟器是否已经连接电脑,但是`adb`是需要你自行放入环境变量中,
 默认目录 C:\Users\[用户名]\AppData\Local\Android\Sdk\platform-tools
 
@@ -41,11 +41,12 @@ RN 需要安装Android SDK platform 23 版 所以按照教程勾选所需安装�
 ![](/statics/img/buildTools23.png)
 
 
-### 生成签名 Generating Signed APK 
+### 生成签名 Generating Signed APK
 
 生成签名按照[官网教程](http://facebook.github.io/react-native/docs/signed-apk-android.html)一步步走
 遇到的坑是
 `~/.gradle/gradle.properties` 文件找不到
+原因是这是MAC的默认路径,win10不是存的这个目录
 
 
 ### 生成发行版的应用 Generating the release APK
@@ -61,6 +62,21 @@ $ cd android && ./gradlew assembleRelease
 再次执行 `./gradlew assembleRelease --stacktrace` 试试,经常要执行两次才能打包成功!
 
 
-### 开发环境需要安装 Python2 ? 
+### 开发环境需要安装 Python2 ?
 
 我本地安装的是 Python3 未发现异常.
+
+### 尝试安装图标插件 Victory Native 删除库之后遇到的问题
+
+安装 Victory Native库,同时需要安装依赖 `npm install react-native-svg --save`,
+并建立链接 `react-native link react-native-svg`,此处在删除库之后出现了大坑
+
+卸载此列库之前,先要取消链接`react-native unlink react-native-svg` 否则在打包时总是报错,撞不到配置之类的,很坑...
+![](/statics/img/error1.png)
+总结:Victory Nativ的卸载顺序
+
+```
+react-native unlink react-native-svg
+npm uninstall react-native-svg --save
+npm uninstall victory-native --save
+```
