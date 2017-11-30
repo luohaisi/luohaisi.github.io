@@ -71,7 +71,7 @@ $ cd android && ./gradlew assembleRelease
 安装 Victory Native库,同时需要安装依赖 `npm install react-native-svg --save`,
 并建立链接 `react-native link react-native-svg`,此处在删除库之后出现了大坑
 
-卸载此列库之前,先要取消链接`react-native unlink react-native-svg` 否则在打包时总是报错,撞不到配置之类的,很坑...
+卸载此列库之前,先要取消链接`react-native unlink react-native-svg` 否则在打包时总是报错,找不到配置之类的,很坑...
 ![](/statics/img/error1.png)
 总结:Victory Nativ的卸载顺序
 
@@ -80,3 +80,14 @@ react-native unlink react-native-svg
 npm uninstall react-native-svg --save
 npm uninstall victory-native --save
 ```
+
+### 一些教程
+
+OS X想要访问您的钥匙串的几个解决方案
+http://www.jianshu.com/p/a671f772e78e
+
+iOS App上架流程(2016详细版）
+http://www.jianshu.com/p/b1b77d804254
+
+iOS APP 上架审核过程中常见问题整理
+http://www.jianshu.com/p/a992c88087a5
