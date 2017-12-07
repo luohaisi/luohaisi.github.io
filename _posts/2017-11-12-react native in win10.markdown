@@ -81,7 +81,32 @@ npm uninstall react-native-svg --save
 npm uninstall victory-native --save
 ```
 
+### Xcode的archive菜单选项是灰色的
+
+![](/statics/img/archive_xcode.png)
+
+如果当前Xcode选择的设备是模拟器，那么"Archive"是灰色的，不能点。
+把当前设备设置成连接的真机设备或者默认的"iOS Device"，"Archive"会变成黑色。
+
+### 证书签名
+
+在Xcode7之前，真机调试和打包ipa是必须要签名的。但是Xcode7出来了，真机调试不需要签名了。打包ipa也可以不需要签名，那不是可以绕过苹果安装app了？？想得美，如果不签名打包的ipa那是不能安装的！！！打包可以不需要签名，但是你要想安装的话，必须签名。
+
+签名打包就是在编译的过程中加入证书签名，那肯定是需要去Xcode中配置的，目前网上有方法能实现企业级证书打包签名不需要在编译时，而在编译之后。因此现在打包有两种方式：
+1、在Xcode中配置code sign，实现签名打包ipa。适用于企业级账号证书，个人账号证书。
+2、在Xcode中无证书打包ipa，上传到指定工作室网站，淘宝上现在一大堆打包服务的，由别人用他们的账号签名ipa。适用于企业及账号。
+
+### 证书、签名、私钥、描述文件的一句话描述
+
+（1）   证书分两种：开发者证书、发布者证书。前者开发时使用，后者发布使用
+（2）   模拟器调试无需代码签名；真机调试需开发者证书代码签名；发布时需发布证书签名
+（3）   代码签名需要：证书+私钥，缺一不可
+（4）   真机调试时要求在设备上安装描述文件（provision profile），该文件包含信息：调试者证书，授权调试设备清单，应用ID。一个应用对应一个描述文件。
+
 ### 一些教程
+
+iOS Provisioning Profile(Certificate)与Code Signing详解
+http://blog.csdn.net/phunxm/article/details/42685597
 
 OS X想要访问您的钥匙串的几个解决方案
 http://www.jianshu.com/p/a671f772e78e
@@ -91,3 +116,6 @@ http://www.jianshu.com/p/b1b77d804254
 
 iOS APP 上架审核过程中常见问题整理
 http://www.jianshu.com/p/a992c88087a5
+
+IOS证书／私钥／代码签名／描述文件
+http://blog.csdn.net/lvxiangan/article/details/17306269
